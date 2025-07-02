@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Países del Mundo</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <h1>Explorador de Países</h1>
+    <input type="text" id="busqueda" placeholder="Buscar país..." />
+    <select id="filtroContinente">
+      <option value="todos">Todos los continentes</option>
+      <option value="Africa">África</option>
+      <option value="Americas">América</option>
+      <option value="Asia">Asia</option>
+      <option value="Europe">Europa</option>
+      <option value="Oceania">Oceanía</option>
+    </select>
+    <select id="ordenNombre">
+      <option value="az">Ordenar A → Z</option>
+      <option value="za">Ordenar Z → A</option>
+    </select>
+    <div id="resultado"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

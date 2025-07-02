@@ -1,0 +1,64 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #fefefe;
+  color: #222;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+input,
+select {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.paises-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.tarjeta-pais {
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tarjeta-pais:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 149, 255, 0.8);
+}
+
+.tarjeta-pais img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.tarjeta-pais ul {
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.detalle-pais {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.volver-enlace {
+  display: block;
+  text-align: center;
+  margin-top: 2rem;
+  text-decoration: none;
+}
