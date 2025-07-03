@@ -1,13 +1,32 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 20px;
-  background-color: #fefefe;
+  background-color: #f76666;
   color: #222;
 }
 
 h1,
 h2 {
   text-align: center;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+  background: none;
+}
+
+h1::after,
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #00bcd4;
+  margin: 0.5rem auto 0 auto;
+  border-radius: 3px;
 }
 
 input,
@@ -24,8 +43,8 @@ select {
 }
 
 .tarjeta-pais {
-  background: white;
-  border-radius: 10px;
+  background: rgb(254, 255, 170);
+  border-radius: 50px;
   padding: 1rem;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   text-align: center;
