@@ -30,13 +30,19 @@ function mostrarPaises(paises) {
       <img src="${pais.flags.svg}" alt="Bandera de ${pais.name.common}" />
       <h3><a href="detalle.html?pais=${encodeURIComponent(
         pais.name.common
-      )}" target="_blank" rel="noopener noreferrer">${pais.name.common}</a></h3>
+      )}" target="_blank">
+        ${pais.name.common}</a></h3>
       <p>Continente: ${pais.region}</p>
       <p>Capital: ${pais.capital ? pais.capital[0] : "Sin datos"}</p>
+      <button class="btn-fav" data-nombre="${
+        pais.name.common
+      }">⭐ Agregar a favoritos</button>
     `;
 
     resultado.appendChild(tarjeta);
   });
+
+  agregarListenersFavoritos(); // ← Se agregan después de crear las tarjetas
 }
 
 function aplicarFiltros() {
@@ -49,7 +55,6 @@ function aplicarFiltros() {
     const coincideContinente =
       continenteSeleccionado === "todos" ||
       pais.region === continenteSeleccionado;
-
     return coincideNombre && coincideContinente;
   });
 
@@ -64,6 +69,25 @@ function aplicarFiltros() {
   mostrarPaises(filtrados);
 }
 
+function guardarFavorito(nombrePais) {
+  let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+  if (!favoritos.includes(nombrePais)) {
+    favoritos.push(nombrePais);
+    localStorage.setItem("favoritos", JSON.stringify(favoritos));
+  }
+}
+
+function agregarListenersFavoritos() {
+  document.querySelectorAll(".btn-fav").forEach((boton) => {
+    boton.addEventListener("click", () => {
+      const nombre = boton.getAttribute("data-nombre");
+      guardarFavorito(nombre);
+      alert(`✅ ${nombre} fue agregado a favoritos`);
+    });
+  });
+}
+
+// Eventos
 inputBusqueda.addEventListener("input", aplicarFiltros);
 selectContinente.addEventListener("change", aplicarFiltros);
 selectOrden.addEventListener("change", aplicarFiltros);

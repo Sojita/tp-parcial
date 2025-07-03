@@ -81,3 +81,34 @@ select {
   margin-top: 2rem;
   text-decoration: none;
 }
+.btn-fav {
+  background-color: #ffe600;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #333;
+  transition: background 0.3s;
+}
+
+.btn-fav:hover {
+  background-color: #ffca00;
+}
+.btn-favoritos-link {
+  display: inline-block;
+  margin: 1rem auto;
+  background-color: #008cff;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.btn-favoritos-link:hover {
+  background-color: #005ecb;
+}

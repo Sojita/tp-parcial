@@ -7,6 +7,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "index.html"),
         detalle: resolve(__dirname, "detalle.html"),
+        favoritos: resolve(__dirname, "favoritos.html"),
       },
     },
   },
